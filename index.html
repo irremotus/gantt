@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<script src="jquery.js"></script>
+		<script src="gantt.js"></script>
+
+		<script>
+			$(document).ready(function() {
+				g = new Gantt();
+				g.addItem(new Item("Item 1", Date.parse("Feb 8"), Date.parse("Feb 10"), 10));
+				g.addItem(new Item("Item 2", Date.parse("Feb 10"), Date.parse("Feb 12"), 20));
+				g.addItem(new Item("Item 3", Date.parse("Feb 12"), Date.parse("Feb 14"), 50));
+				i1 = new Item("Item 4", Date.parse("Feb 14"), Date.parse("Feb 17"), 60);
+				i1.addItem(new Item("Item 5", Date.parse("Feb 14"), Date.parse("Feb 16"), 10));
+				i1.addItem(new Item("Item 6", Date.parse("Feb 15"), Date.parse("Feb 17"), 100));
+				g.addItem(i1);
+				g.draw();
+			});
+		</script>
+	</head>
+
+	<body>
+
+		<canvas id="canvas1" height="600" width="800" style="background-color:yellow;"></canvas>
+	</body>
+</html>
